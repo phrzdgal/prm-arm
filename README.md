@@ -13,7 +13,7 @@ currently contains
 
 | Phase | Goal | Status |
 |------:|------|--------|
-| 1 | Forward kinematics in C++ with tests | In progress |
+| 1 | Forward kinematics in C++ with tests | Done |
 | 2 | ROS 2 nodes (publish/subscribe joint commands) | Not started |
 | 3 | Control a simulated arm with MoveIt 2 | Not started |
 | 4 | Kinematics integration and verification | Not started |

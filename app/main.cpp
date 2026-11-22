@@ -17,10 +17,11 @@ namespace {
 bool parseDouble(const std::string& text, double& out) {
   if (text.empty()) return false;
   char* end = nullptr;
-  out = std::strtod(text.c_str(), &end);
+  out = std::strtod(text.c_str(), &end);  // function parses C-style string and converts its numeric prefix into a double
   return end != text.c_str() && *end == '\0';
 }
 
+// runs kinematics and prints the result
 int report(const prm::ArmParams& arm, double t1_deg, double t2_deg) {
   const double t1 = prm::degToRad(t1_deg);
   const double t2 = prm::degToRad(t2_deg);
