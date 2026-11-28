@@ -74,5 +74,10 @@ docs/derivation.md             the math, derived step by step
 - Finished with forward kinematics portion of the project and textbook readings. What's left is to understain main.cpp.
 
 ## Discussion 06/11/26
-
 This is part one of journey towards mastering robotics as a craft and creating a robot arm. Four functions were written in order to output the parts of the arm such as the tip or the elbow, and to derive the forward kinematics equation for the arm. Additional functions were implemented to ensure valid inputs to the function, and valid outputs indicating error or status code given the case of an invalid input. Chapters 1-2 from Modern Robotics corresponds to this section of the project, introducing and highlighting the concepts of forward kinematics and answering the question: where is the tip of the robot? 
+
+## 23/11/26
+- Beginning week 2 assignment 
+
+## 28/11/26
+- Completed week 2 assignment

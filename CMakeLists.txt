@@ -18,7 +18,10 @@ add_compile_options(-Wall -Wextra -Wpedantic -Wshadow -Wconversion)
 # --- Kinematics library ------------------------------------------------------
 # Kept separate from the CLI so the same code can later be linked into
 # ROS 2 nodes and compared against MoveIt's results.
-add_library(prm_kinematics src/two_link_arm.cpp)
+add_library(prm_kinematics
+  src/two_link_arm.cpp
+  src/two_link_ik.cpp
+)
 target_include_directories(prm_kinematics PUBLIC include)
 
 # --- Command-line demo -------------------------------------------------------
@@ -40,8 +43,13 @@ if(PRM_BUILD_TESTS)
     FetchContent_MakeAvailable(googletest)
   endif()
 
+  include(GoogleTest)
+
   add_executable(test_two_link_arm tests/test_two_link_arm.cpp)
   target_link_libraries(test_two_link_arm PRIVATE prm_kinematics GTest::gtest_main)
-  include(GoogleTest)
   gtest_discover_tests(test_two_link_arm)
+
+  add_executable(test_two_link_ik tests/test_two_link_ik.cpp)
+  target_link_libraries(test_two_link_ik PRIVATE prm_kinematics GTest::gtest_main)
+  gtest_discover_tests(test_two_link_ik)
 endif()
